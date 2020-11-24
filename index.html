@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Introduction to AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <base href="http://courses.cs.vt.edu/cs4804/Fall20/">
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- TODO: #2 update GA ID -->
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-574893-4', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+<body>
+
+  <div class="content container-fluid" style="max-width: 1024px;">
+
+    <div class="jumbotron">
+      <h1>Artificial Intelligence</h1>
+      <p>CS4804 Fall 2020</p>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h4>Description</h4>
+
+        <p>This course will introduce the foundations of modern artificial intelligence (AI) and key ideas and techniques underlying the design of intelligent computer systems. It will focus on concepts that are not only important in the space of AI but are also practically useful in modern applications. We will practice effective methods of reasoning about AI problems, which will generalize beyond the specific topics we study in class. Topics include (but are not limited to) search, game playing, logic, machine learning, deep learning, natural language processing, robotics and image processing. The techniques you learn in this course apply to a wide variety of artificial intelligence problems and will serve as the foundation for further study in any application area you choose to pursue.</p>
+        <p>Class meets Tuesday and Thursday from 3:30 PM to 4:45 PM using Zoom (Online with Synchronous meetings).</p>
+
+        <ul class="list-group">
+          <li class="list-group-item"><b>Instructor:</b><br/>
+            <a href="http://yinlinchen.com">Yinlin Chen</a>, Assistant Professor and Digital Library Architect, University Libraries<br/> 
+            Office hours: Tuesday 1:00 PM–3:00 PM, or by appointment.<br/>
+            Email: <a href="mailto:ylchen@vt.edu">ylchen@vt.edu</a><br/>
+            Zoom Address: <a href="https://virginiatech.zoom.us/my/yinlinchen">https://virginiatech.zoom.us/my/yinlinchen</a>
+          </li>
+
+          <li class="list-group-item"><b>Teaching Assistants:</b><br/>
+
+            <a href="">Hongjie Chen</a><br/> Office hours: Wednesday 2–4 pm<br/>
+            Email: <a href="mailto:Jeffchan@vt.edu">Jeffchan@vt.edu</a><br/>
+            Zoom Address: <a href="https://virginiatech.zoom.us/my/jeffchan">https://virginiatech.zoom.us/my/jeffchan</a>
+            <br/><br/>
+
+            <a href="https://www.linkedin.com/in/shakibadavari">Shakiba Davari</a>,  Ph.D. Student, at 3D-Interaction Lab<br/>Office hours: Friday 1:30-3:30 pm<br/>
+            Email: <a href="mailto:sdavari@vt.edu">sdavari@vt.edu</a><br/>
+            Zoom Address: <a href="https://virginiatech.zoom.us/j/88942120769">https://virginiatech.zoom.us/j/88942120769</a>
+          </li>
+          <li class="list-group-item"><b>Class and Office Hour Chart</b><br/>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <td width="20%">Mon.</td>
+                  <td width="20%">Tue.</td>
+                  <td width="20%">Wed.</td>
+                  <td width="20%">Thu.</td>
+                  <td width="20%">Fri.</td>
+                </tr>
+              </thead>
+              <tr>
+
+                <td>
+                  3:00 PM - 4:00 PM<br />
+                  Hongjie, <a href="https://virginiatech.zoom.us/my/jeffchan">Zoom</a>
+                  <br />
+                  <br /> 
+                  <br />
+                  <br />
+                </td>
+                <td>
+                  1:00 PM &ndash; 3:00 PM<br/>
+                  Instructor Office Hours, <a href="https://virginiatech.zoom.us/my/yinlinchen">Zoom</a><br/><br/>
+                  3:30 PM &ndash; 4:45 PM
+                <br />Class, <a href="https://virginiatech.zoom.us/j/95324295501">Zoom</a>
+                </td>
+                <td>
+                  2:00 PM - 3:00 PM<br />
+                  Hongjie, <a href="https://virginiatech.zoom.us/my/jeffchan">Zoom</a>
+
+                  <br />
+                  <br />
+                  <br /> 
+                </td>
+                <td>
+                  3:30 PM &ndash; 4:45 PM
+                  <br />Class, <a href="https://virginiatech.zoom.us/j/95324295501">Zoom</a>
+                </td>
+                <td>
+                  1:30 PM - 3:30 PM<br />
+                  Shakiba, <a href="https://virginiatech.zoom.us/j/88942120769">Zoom</a>
+
+                  <br />
+                  <br />
+                  <br />
+                </td>
+              </tr>
+            </table>
+            <!-- * By appointment only. -->
+        </ul>
+
+        <p>The course homepage (this page) is at <a href="http://courses.cs.vt.edu/cs4804/Fall20/">http://courses.cs.vt.edu/cs4804/Fall20/</a>. <br/>
+        Canvas: <a href="https://canvas.vt.edu/courses/115641">CS4804</a> and should be visible to all users with a Virginia Tech login.</p>
+
+        These software and tools would be used during the class:
+        <ul>
+          <li><a href="https://virginiatech.zoom.us/j/95324295501" target="_new">Zoom</a> <a href="https://virginiatech.zoom.us/j/95324295501" target="_new">https://virginiatech.zoom.us/j/95324295501</a>: We will use Zoom for online classes and meetings.</li>
+          <li><a href="https://github.com/CS4804" target="_new">GitHub</a>: We will use GitHub as a code repository for class program, demostration, workshop, etc.</li>
+          <li><a href="https://aws.amazon.com/">AWS</a>: We will use AWS for class program, demostration, workshop, etc.</li>
+        </ul>
+
+        <h4 id="learningobjectives">Learning Objectives</h4> By the successful completion of this course, students will be able to:
+        <ul>
+          <li>Explain and analyze classical artificial intelligence algorithms.
+          <li>Examine applications of AI techniques in intelligent agents, expert systems, artificial neural networks, and other machine learning models.</li>
+          <li>Design and develop intelligent systems by assembling solutions to concrete computational problems that learn from experience.</li>
+          <li>Implement methods of machine learning using a high-level programming language.</li>
+          <li>Have a well-informed perspective on what is possible with modern AI methods and what will be possible in the future.</li>
+        </ul>
+
+        <h4 id="topics">Topics</h4>
+        <ul>
+          <li>Search: heuristic search, A*, adversarial search, and game playing.</li>
+          <li>Probability and learning: reasoning under uncertainty, reinforcement learning, temporal modeling.</li>
+          <li>Logic and knowledge: propositional, first-order, reasoning, planning, knowledge representation.</li>
+          <li>Machine learning: supervised, unsupervised, reinforcement, and deep learning.</li>
+          <li>AI Applications: self-driving cars, computer vision, natural language processing, and more.</li>
+        </ul>
+
+        <h4 id="prerequisites">Prerequisites</h4>
+
+        <p>The only official prerequisite is CS 3114 (Undergraduate Data Structures and Algorithms). You should be comfortable with discrete mathematics, basic probability and statistics, basic logic, computational complexity, data structures, and algorithm
+          analysis. The homework assignments will include programming portions using Python. </p>
+
+        <p>Please speak with the instructor if you are concerned about your background.
+
+          <h4 id="accessibility">Accessibility</h4>
+
+          <p>If any student needs special accommodations because of any disabilities, please contact the instructor during the first week of classes. Such students are encouraged to work with
+            <a href="https://www.ssd.vt.edu">
+          The Office of Services for Students with Disabilities</a> to help coordinate accessibity arrangements.</p>
+
+          <h4 id="readingandmaterials">Reading and materials</h4>
+
+          <ul>
+            <li>Russell and Norvig, Artificial Intelligence, A Modern Approach. <b>4th Edition</b>. ISBN: 0134610997 / <b>3rd Edition</b>. ISBN: 0136042597 <a href="http://aima.cs.berkeley.edu">http://aima.cs.berkeley.edu</a>.</li>
+            <li>Additional materials may be provided electronically, including readings, video lectures, and other media.</li>
+            <li>Slides and other materials will be available in at <a href="http://courses.cs.vt.edu/cs4804/Fall20/slide_pdfs/">http://courses.cs.vt.edu/cs4804/Fall20/slide_pdfs/index.html</a>.</li>
+          </ul>
+
+          <h4 id="gradingbreakdown">Grading breakdown</h4>
+          <ul>
+            <li>7%: Class attendance and participation</li>
+            <li>2%: Homework & Project 0</li>
+            <li>56%: Homework assignments with written and Project programming components</li>
+            <li>15%: Midterm exam</li>
+            <li>20%: Final exam</li>
+          </ul>
+
+      <h4>Class schedule</h4>
+          <table class="table table-bordered table-hover" >
+            <thead>
+              <tr>
+                <th scope="col" class="text-center">Week</th>
+                <th scope="col" class="text-center">Dates</th>
+                <th scope="col" class="text-center">Tue</th>
+                <th scope="col" class="text-center">Thur</th>
+                <th scope="col" class="text-center" width="20%">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="text-center">1</td>
+                <td class="text-center">08/24-08/28</td>
+                <td>Overview of AI (<a href="pdf/1-overview.pdf">pdf</a>) <br/>Ch.1 & 2</td>
+                <td>Uninformed Search (<a href="pdf/1-search.pdf">pdf</a>) <br/>Ch. 3.1-3.4 </td>
+                <td><a href="https://canvas.vt.edu/courses/115641/quizzes/229402">HW0</a> / <a href="projects/project0.html">P0: Tutorial</a> </td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">2</td>
+                <td class="text-center">08/31-09/04</td>
+                <td>Informed Search (<a href="pdf/2-informed.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>) <br/> Ch. 3.5-3.6 </td>
+                <td>Game, Adversarial Search (<a href="pdf/2-game.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>) <br/> Ch. 5.1-5.3 </td>
+                <td><a href="https://canvas.vt.edu/courses/115641/quizzes/230090">HW1</a> / <a href="projects/project1.html">P1: Search</a></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">3</td>
+                <td class="text-center">09/07-09/11</td>
+                <td>Game, Expectimax, Utilities (<a href="pdf/3-gameutility.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>) <br/>Ch. 5.5 & 16.1-16.3</td>
+                <td>CSP I (<a href="pdf/3-csp.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>) <br/>Ch. 6.1-6.2 </td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">4</td>
+                <td class="text-center">09/14-09/18</td>
+                <td>CSP II (<a href="pdf/4-csp.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>) <br/>Ch. 6.3–6.5</td>
+                <td>Propositional Logic (<a href="pdf/4-logic.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>) <br/>Ch. 7.1–7.5</td>
+                <td><a href="https://canvas.vt.edu/courses/115641/quizzes/233602">HW2</a> / <a href="projects/project2.html">P2: Multi-Agent Search</a></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">5</td>
+                <td class="text-center">09/21-09/25</td>
+                <td>First-Order Logic (<a href="pdf/5-firstorder.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>) <br/>Ch. 8 & 9</td>
+                <td>Markov Decision Processes (<a href="pdf/5-mdp.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>) <br/>Ch. 17.1-17.3</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">6</td>
+                <td class="text-center">09/28-10/02</td>
+                <td>MDP / Reinforcement Learning (<a href="pdf/6-mdprl.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>) <br/>Ch. 17-3-17.5 & 22.1</td>
+                <td>Reinforcement Learning I (<a href="pdf/6-rl.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>) <br/>Ch. 22.1-22.2</td>
+                <td><a href="https://canvas.vt.edu/courses/115641/quizzes/232566">HW3</a> / <a href="projects/minicontest1.html">P6: Mini-Contest 1</a></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">7</td>
+                <td class="text-center">10/05-10/09</td>
+                <td>Reinforcement Learning II (<a href="pdf/7-rl2.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>) <br/>Ch. 22.3-22.5</td>
+                <td>Probability (<a href="pdf/7-prob.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>) <br/>Ch. 12.1–12.5</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">8</td>
+                <td class="text-center">10/12-10/16</td>
+                <td>Bayesian Networks (<a href="pdf/8-bn.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>) <br/>Ch. 13.1-13.3</td>
+                <td><b>10/15 <a href="https://canvas.vt.edu/courses/115641/quizzes/233372">Midterm Exam (Online)</a><br/>2:30pm – 5:40pm <br/>Exam time 2 hours.</b></td>
+                <td>10/16 Fall Break</td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">9</td>
+                <td class="text-center">10/19-10/23</td>
+                <td>Bayesian Networks II (<a href="pdf/9-bn2.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>) <br/>Ch. 13.3-13.5</td>
+                <td>Decision Networks / HMMs (<a href="pdf/9-dnhmm.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>) <br/>Ch. 14.1-14.3 & 16.5-16.6</td>
+                <td><a href="https://canvas.vt.edu/courses/115641/quizzes/241814">HW4</a> / <a href="projects/project3.html">P3: Reinforcement Learning</a></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">10</td>
+                <td class="text-center">10/26-10/30</td>
+                <td>Particle Filters (<a href="pdf/10-pf.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>)<br/>Ch. 14.1-3,14.5</td>
+                <td>Machine Learning Fundamentals (<a href="pdf/10-ml.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>) <br/>Ch. 19</td>
+                <td><a href="https://canvas.vt.edu/courses/115641/assignments/1023687">HW7</a> / <a href="projects/minicontest2.html">P7: Mini-Contest 2</a></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">11</td>
+                <td class="text-center">11/02-11/06</td>
+                <td>Machine Learning II (<a href="pdf/11-ml2.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>)<br/>Ch. 20 </td>
+                <td>Deep Learning Fundamentals (<a href="pdf/11-dl.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>)<br/>Ch. 21.1-21.2 </td>
+                <td><a href="https://canvas.vt.edu/courses/115641/quizzes/244100">HW5</a> / <a href="projects/project4.html">P4: Ghostbusters</a></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">12</td>
+                <td class="text-center">11/09-11/13</td>
+                <td>Neural Networks & Nature Language Processing (<a href="pdf/12-nn.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>)<br/>Ch. 21.3-21.6 & Ch 23</td>
+                <td>Deep Learning for NLP <br/>Guest: Dr. Lifu Huang (<a href="https://drive.google.com/file/d/1EBjeDc1neEdb0g0c_f257FcNOwnR0Ukz/view?usp=sharing">slides</a>) (<a href="pdf/class_1112.pdf">pdf</a>) (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>)<br/>Ch. 24</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">13</td>
+                <td class="text-center">11/16-11/20</td>
+                <td>Robotics<br/>Guest: Dr. Sahika Genc (AWS)<br/>Ch. 26</td>
+                <td>Computer Vision<br/>Guest: Dr. Jia-Bin Huang (<a href="https://canvas.vt.edu/courses/115641/external_tools/4371">recording</a>)<br/>Ch. 25</td>
+                <td><a href="https://canvas.vt.edu/courses/115641/quizzes/245959">HW6</a> / <a href="projects/project5.html">P5: Machine Learning</a></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">14</td>
+                <td class="text-center">11/23-11/27</td>
+                <td>No class</td>
+                <td>No class</td>
+                <td>Thanksgiving Week</td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">15</td>
+                <td class="text-center">11/30-12/04</td>
+                <td>The Ethics of AI / Final review<br/>Ch. 27 </td>
+                <td>The Future of AI<br/>Ch. 28</td>
+                <td><a href="https://canvas.vt.edu/courses/115641/assignments/1023687">HW7</a> / <a href="projects/minicontest2.html">P7: Mini-Contest 2</a> Due on 11/30 Monday</td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">16</td>
+                <td class="text-center">12/07-12/11</td>
+                <td>No class</td>
+                <td>No class (Reading day)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center">17</td>
+                <td class="text-center">12/14-12/18</td>
+                <td>No class</td>
+                <td>No class</td>
+                <td><b>12/16 (Wed) Final Exam <br/>(Online)1:05pm – 3:05pm<br/>Exam time 2 hours.</b></td>
+              </tr>
+            </tbody> 
+            </table>
+      <h4 id="homework">Homeworks</h4>
+
+      <ul>
+        <li>Each homework assignment will include written and programing portions.</li>
+        <li>Both written and programming assignments will be submitted electronically. Submission instructions will be posted with each assignment on Canvas.</li>
+        <li>Programming assignments will be in Python and will be based on the UC Berkeley <a href="http://ai.berkeley.edu/project_overview.html">The Pac-Man Projects </a>.</li>
+        <li>These programming assignments, while fun, only cover a portion of the topics we will study, so they will be supplemented with written problems.</li>
+      </ul>
+
+      <h4 id="exams">Mini-Contests</h4>
+      <p>Mini-Contests are programming assignments which covers from homework assignments with more difficult scenarios. There is no single set solution, please bring your own creative ideas!</p>
+
+      <h4 id="exams">Exams</h4>
+
+        that you do not use communication tools like email, chat, or social media during the exams.</p>
+
+      <ul>
+        <li><b>The midterm exam will be a take-home (online) 10/15 (Thursday) 2:30pm – 5:40pm. Exam time 2 hours.</b></li>
+        <li><b>The final exam will be a take-home exam (online) 12/16 (Wednesday) 1:05pm – 3:05pm. Exam time 2 hours.</b></li>
+      </ul>
+
+      * The instructor reserves the right to adjust for unexpected performance on the final exam, exceptional contributions to student activities, or other anomalies. The instructor reserves the right to be more lenient in the assignment of letter grades.
+
+      <h4 id="regradingrequests">Regrading requests</h4>
+
+      <p>Requests for regrading due to grading errors must be submitted in writing to a TA within one week of the release of grades. </p>
+
+      <h4 id="latehomeworkpolicy">Late homework policy</h4>
+
+      <p>Homework submitted late without permission will be penalized according to the following formula:</p>
+      <center>
+        <p><b>(Penalized score) = (Your raw score) * (1 - 0.1 * (# of days past deadline))</b></p>
+      </center>
+      <p>This formula will apply for up to three days, after which the homework will not be accepted and you will receive a grade of zero. Avoid invoking these penalties by starting early and seeking extra help. </p>
+
+      <h4 id="gradingscale">Grading scale</h4>
+
+      <p>Based on the grading breakdown above, each student's final grade for the course will be determined by the final percentage of points earned. The grade ranges are as follows: </p>
+      <center>
+        <table border="1">
+          <tr>
+            <td>&nbsp;<b>A</b>&nbsp;</td>
+            <td>&nbsp;93.3%&ndash;100%&nbsp;</td>
+            <td>&nbsp;<b>A-</b>&nbsp;</td>
+            <td>&nbsp;90.0%&ndash;93.3%&nbsp;</td>
+            <td>&nbsp;<b>B+</b>&nbsp;</td>
+            <td>&nbsp;86.6%&ndash;90.0%&nbsp;</td>
+            <td>&nbsp;<b>B</b>&nbsp;</td>
+            <td>&nbsp;83.3%&ndash;86.6%&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;<b>B-</b>&nbsp;</td>
+            <td>&nbsp;80.0%&ndash;83.3%&nbsp;</td>
+            <td>&nbsp;<b>C+</b>&nbsp;</td>
+            <td>&nbsp;76.6%&ndash;80.0%&nbsp;</td>
+            <td>&nbsp;<b>C</b>&nbsp;</td>
+            <td>&nbsp;73.3%&ndash;76.6%&nbsp;</td>
+            <td>&nbsp;<b>C-</b>&nbsp;</td>
+            <td>&nbsp;70.0%&ndash;73.3%&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;<b>D+</b>&nbsp;</td>
+            <td>&nbsp;66.6%&ndash;70.0%&nbsp;</td>
+            <td>&nbsp;<b>D</b>&nbsp;</td>
+            <td>&nbsp;63.3%&ndash;66.6%&nbsp;</td>
+            <td>&nbsp;<b>D-</b>&nbsp;</td>
+            <td>&nbsp;60.0%&ndash;63.3%&nbsp;</td>
+            <td>&nbsp;<b>F</b>&nbsp;</td>
+            <td>&nbsp;00.0%&ndash;60.0%&nbsp;</td>
+          </tr>
+        </table>
+      </center>
+
+      <br/>
+     
+      <h4 id="academicintegrity">Academic integrity</h4>
+
+      <p>The Undergraduate Honor Code pledge that each member of the university community agrees to abide by states: "As a Hokie, I will conduct myself with honor and integrity at all times. I will not lie, cheat, or steal, nor will I accept the actions
+        of those who do."</p>
+
+      <p>Students enrolled in this course are responsible for abiding by the Honor Code. A student who has doubts about how the Honor Code applies to any assignment is responsible for obtaining specific guidance from the course instructor before submitting
+        the assignment for evaluation. Ignorance of the rules does not exclude any member of the University community from the requirements and expectations of the Honor Code. For additional information about the Honor Code, please visit:
+        <a href="https://www.honorsystem.vt.edu/">https://www.honorsystem.vt.edu/</a></p>
+
+      <p>This course will have a zero-tolerance philosophy regarding plagiarism or other forms of cheating. Your homework assignments must be your own work, and any external source of code, ideas, or language must be cited to give credit to the original
+        source. I will not hesitate to report incidents of academic dishonesty to the Office of the Undergraduate Honor System.</p>
+
+      <h4 id="principles">Principles of Community</h4>
+
+      <p>Because the course will include in-class discussions, we will adhere to Virginia Tech's <a href="http://inclusive.vt.edu/vtpoc0.html">Principles of Community</a>. The first two principles are most relevant:</p>
+
+      <ul>
+        <li>We affirm the inherent dignity and value of every person and strive to maintain a climate for work and learning based on mutual respect and understanding.</li>
+        <li>We affirm the right of each person to express thoughts and opinions freely. We encourage open expression within a climate of civility, sensitivity, and mutual respect.</li>
+      </ul>
+
+      <p>The remaining principles are also important and we will take them seriously as a class.</p>
+
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div style="height: 500px;">
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+
+          <p class="text-muted">Disclaimer: This syllabus details the plans for the course, which are subject to change. I will make sure any changes are clearly announced and will always be intended for your benefit.</p>
+          <p class="text-muted">The course structure and materials are adopted from the "Intro AI" at UC Berkeley and CS4804 Fall 2018 course (taught by Dr. Bert Huang) with an update using AIMA 4th edition.</p>
+          <p class="text-muted">For visitors outside the course: you are welcome to use the course materials for educational purposes. Do not sell any of this content.</p>
+
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="https://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+  </script>
+
+</body>
+
+</html>
